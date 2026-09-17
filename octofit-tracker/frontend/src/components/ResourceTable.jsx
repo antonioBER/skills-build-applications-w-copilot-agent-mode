@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import { fetchCollection } from '../api.js'
 
-export default function ResourceTable({ resource, title, description, columns }) {
+export default function ResourceTable({ endpoint, resource, title, description, columns }) {
   const [rows, setRows] = useState([])
   const [state, setState] = useState({ loading: true, error: '' })
 
   useEffect(() => {
     const controller = new AbortController()
-    fetchCollection(resource, controller.signal)
+    fetchCollection(endpoint, controller.signal)
       .then((items) => {
         setRows(items)
         setState({ loading: false, error: '' })
@@ -16,7 +16,7 @@ export default function ResourceTable({ resource, title, description, columns })
         if (error.name !== 'AbortError') setState({ loading: false, error: error.message })
       })
     return () => controller.abort()
-  }, [resource])
+  }, [endpoint, resource])
 
   return (
     <section className="resource-page">
