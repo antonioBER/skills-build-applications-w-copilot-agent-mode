@@ -1,0 +1,20 @@
+.app-shell { min-height: 100vh; background: var(--paper); }
+.app-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 6vw; background: var(--ink); color: white; }
+.brand { color: white; font-family: var(--heading); font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+.brand span { color: var(--lime); }
+nav { display: flex; flex-wrap: wrap; gap: 8px; }
+nav a { color: #c8d0ca; padding: 8px 12px; text-decoration: none; border-bottom: 2px solid transparent; }
+nav a:hover, nav a.active { color: white; border-bottom-color: var(--lime); }
+.app-main { max-width: 1180px; margin: 0 auto; padding: 64px 6vw; }
+.page-heading { margin-bottom: 36px; max-width: 680px; }
+.page-heading h1 { margin: 8px 0 12px; font-size: clamp(2.4rem, 6vw, 5rem); line-height: .95; }
+.page-heading p:last-child { color: var(--muted); }
+.eyebrow { color: var(--coral); font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.table-wrap { overflow-x: auto; background: white; border: 1px solid #dbe2dc; box-shadow: 8px 8px 0 var(--lime); }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th, td { padding: 18px 20px; border-bottom: 1px solid #e8ece8; }
+th { color: var(--muted); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+td { color: var(--ink); }
+.status { padding: 24px; background: white; border-left: 4px solid var(--lime); color: var(--muted); }
+.status.error { border-left-color: var(--coral); color: var(--coral); }
+@media (max-width: 720px) { .app-header { align-items: flex-start; flex-direction: column; } .app-main { padding-top: 40px; } }
